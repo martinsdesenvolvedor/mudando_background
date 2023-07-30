@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ex001</title>
+    <style>
+        @media screen and (max-width: 768px) {
+            
+            body {
+                background: rgb(5, 112, 138);
+                color: white;
+            }
+
+            button {
+                border-radius: 15px;
+                font-size: 1.2rem;
+                padding: 0.3rem;
+                width: 100px;
+            }
+
+            h1 {
+                text-align: center;
+            
+            }
+
+            p {
+                padding: 1rem;
+                text-align: justify;
+                line-height: 1.5rem;
+            
+            }
+
+            footer p {
+                text-align: center;
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <button class="cores">cores</button>
+        <button onclick="claro()">claro</button>
+        <button onclick="escuro()">escuro</button>
+        <h1>Martins Desenvolvedor</h1>
+    </header>
+    <main>
+        <p><strong>HTML5</strong> é a última versão da linguagem de marcação de hipertexto, e é amplamente usada para estruturar e apresentar o conteúdo em páginas da web. Com sua sintaxe mais limpa e poderosa, o HTML5 trouxe várias novidades, como novos elementos semânticos (como header, nav, article, entre outros) que facilitam a organização do conteúdo, suporte nativo a áudio e vídeo, recursos para criação de gráficos e animações com a tag canvas, além de ser mais amigável para dispositivos móveis, tornando a experiência do usuário mais agradável e responsiva.</p>
+        <p><strong>CSS3</strong> é a terceira versão das Folhas de Estilo em Cascata (Cascading Style Sheets) e é a tecnologia mais utilizada para estilizar páginas da web. Com o CSS3, os desenvolvedores têm acesso a recursos avançados de formatação e estilização, permitindo criar layouts flexíveis, efeitos de transição e animações, bordas arredondadas, sombras, gradientes, entre outros. Além disso, o CSS3 oferece suporte a mídia responsiva, tornando mais fácil a adaptação do conteúdo para diferentes tamanhos de tela e dispositivos, contribuindo para a criação de sites mais atraentes e amigáveis.</p>
+        <p><strong>JAVASCRIPT</strong> é uma linguagem de programação amplamente usada para adicionar interatividade e dinamismo a páginas da web. Com a sua capacidade de manipular o DOM (Document Object Model), JavaScript permite que os desenvolvedores criem comportamentos interativos, como formulários que validam os dados antes de serem enviados, efeitos de animação, carregamento dinâmico de conteúdo sem precisar recarregar a página inteira, entre outras funcionalidades. Além disso, com o surgimento de bibliotecas e frameworks populares, como jQuery, React e Angular, o JavaScript se tornou ainda mais poderoso e eficiente para o desenvolvimento web moderno.</p>
+    </main>
+    <footer>
+        <p>Desenvolvido por Martins - 2023</p>
+    </footer>
+    <script>
+        function claro() {
+            document.body.style.background = 'white'
+            document.body.style.color = 'black'
+        }
+
+        function escuro() {
+            document.body.style.background = 'black'
+            document.body.style.color = 'white'
+        }
+
+        var elemento = document.querySelector('body')
+        var cores = document.querySelector('.cores')
+        var listaCores = ['red', 'blue', 'yellow', 'pink']
+        var corAtual = 0
+
+        cores.addEventListener('click', function mudaCor(){
+        
+            elemento.style.background = listaCores[corAtual]
+            document.body.style.color = 'white'
+            corAtual++
+
+            if(corAtual == 3 || corAtual == 4) {
+                document.body.style.color = 'black'
+               
+            }
+
+          
+            if (corAtual >= listaCores.length) {
+                corAtual = 0
+            
+            }
+ 
+        })
+        
+    </script>
+</body>
+</html>
